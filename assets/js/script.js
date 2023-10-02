@@ -14,25 +14,24 @@ $(".saveBtn").on("click", saveTask);
 //set up time blocks
 setupTimeBlocks();
 
-//save to local storage
+//save task text written to local storage
 function saveTask(event) {
-  event.preventDefault();
-  var timeBlock = $(this).parent().attr("id");
-  var taskDescription = $(this).prev().val().trim();
 
-  if (taskDescription !== "") {
-    localStorage.setItem(timeBlock, taskDescription);
-  }
 }
 
-//set up time blocks and colour code
+//set up time blocks and applies a class so css can colour code accordingly
 
 function setupTimeBlocks() {
+  //get current hour
   var currentHour = dayjs().hour();
 
+  //go through each time block
   $(".time-block").each(function() {
+
+    //gets hour value from id attribute of time block
     var hour = parseInt($(this).attr("id").split("-")[1]);
 
+    //apply classes for css to affect depending on the hour vs current hour
     if (hour < currentHour) {
       $(this).addClass("past");
     } else if (hour === currentHour) {
@@ -41,10 +40,8 @@ function setupTimeBlocks() {
       $(this).addClass("future");
     }
 
-    // Display saved task from local storage
-    var savedTask = localStorage.getItem($(this).attr("id"));
-    $(this).children(':nth-child(2)').val(savedTask);
   });
+
 }
 });
 
