@@ -2,7 +2,7 @@
 
 This is a calendar application that allows  a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-Test it out here: [Deployed Link]()
+Test it out here: [Deployed Link](https://abi-gail17.github.io/05-Calendar-App/)
 
 ## Table of Contents
 [Screenshots](#screenshots-of-application)
@@ -11,13 +11,10 @@ Test it out here: [Deployed Link]()
 [License](#license)
 
 ## Screenshots of Application
-![Alt text]
-![Alt text]
-![Alt text]
-![Alt text]
-![Alt text]
-![Alt text]
-![Alt text]
+![Alt text](assets/images/schedule1.png)
+![Alt text](assets/images/schedule2.png)
+![Alt text](assets/images/schedule3.png)
+![Alt text](assets/images/schedule.gif)
 
 ## Credit
 
