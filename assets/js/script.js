@@ -16,7 +16,16 @@ setupTimeBlocks();
 
 //save task text written to local storage
 function saveTask(event) {
+  event.preventDefault();
 
+  // Get the id attribute of the parent time-block div
+  var timeBlock = $(this).parent().attr("id");
+
+  // Get the value of text in the textarea 
+  var taskText = $(this).prev().val();
+
+  // save to local storage
+    localStorage.setItem(timeBlock, taskText);
 }
 
 //set up time blocks and applies a class so css can colour code accordingly
@@ -40,8 +49,11 @@ function setupTimeBlocks() {
       $(this).addClass("future");
     }
 
-  });
+    // Display saved task from local storage in the textarea
+    var savedTask = localStorage.getItem($(this).attr("id"));
+    $(this).children(':nth-child(2)').val(savedTask);
 
+  });
 }
 });
 
